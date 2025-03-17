@@ -1,0 +1,24 @@
+{
+  "name": "sales-report-lambda",
+  "version": "1.0.0",
+  "description": "Lambda function for processing sales reports",
+  "main": "handler.js",
+  "scripts": {
+    "deploy": "serverless deploy",
+    "local": "serverless offline"
+  },
+  "dependencies": {
+    "mongodb": "^5.0.0",
+    "mongoose": "^7.5.0",
+    "aws-sdk": "^2.1450.0",
+    "moment": "^2.29.4"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.119",
+    "@types/node": "^18.15.11",
+    "serverless": "^3.34.0",
+    "serverless-offline": "^12.0.4",
+    "serverless-plugin-typescript": "^2.1.5",
+    "typescript": "^5.1.6"
+  }
+}

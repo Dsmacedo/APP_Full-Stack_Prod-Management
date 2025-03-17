@@ -1,0 +1,53 @@
+service: sales-report-processor
+
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  stage: ${opt:stage, 'dev'}
+  region: ${opt:region, 'us-east-1'}
+  environment:
+    MONGODB_URI: mongodb+srv://Dan:970516@cluster0.b8qrk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+    DB_NAME: eadcourse
+    NODE_ENV: ${opt:stage, 'dev'}
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+
+functions:
+  generateDailyReport:
+    handler: src/handler.generateDailyReport
+    events:
+      # Agendar para rodar diariamente às 1h da manhã
+      - schedule: cron(0 1 * * ? *)
+      - http:
+          path: reports/daily
+          method: post
+          cors: true
+    timeout: 30
+
+  generateMonthlyReport:
+    handler: src/handler.generateMonthlyReport
+    events:
+      # Agendar para rodar no primeiro dia de cada mês às 2h da manhã
+      - schedule: cron(0 2 1 * ? *)
+      - http:
+          path: reports/monthly
+          method: post
+          cors: true
+    timeout: 60
+
+  generateReportOnDemand:
+    handler: src/handler.generateReportOnDemand
+    events:
+      - http:
+          path: reports/generate
+          method: post
+          cors: true
+    timeout: 30
+
+custom:
+  serverless-offline:
+    httpPort: 4000

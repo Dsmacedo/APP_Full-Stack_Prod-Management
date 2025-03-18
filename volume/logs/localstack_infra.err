@@ -1,0 +1,33 @@
+SERVICES variable is ignored if EAGER_SERVICE_LOADING=0.
+Persistence mode was activated using the DATA_DIR variable. DATA_DIR is deprecated and its value is ignored. The data is instead stored into /var/lib/localstack/state in the LocalStack volume.
+2025-03-18T01:40:33.904  WARN --- [  MainThread] localstack.deprecations    : DEFAULT_REGION is deprecated (since 0.12.7) and will be removed in upcoming releases of LocalStack! LocalStack now has full multi-region support. Please remove this environment variable.
+2025-03-18T01:40:33.904  WARN --- [  MainThread] localstack.deprecations    : DATA_DIR is deprecated (since 1.0.0) and will be removed in upcoming releases of LocalStack! Please use PERSISTENCE instead. The state will be stored in your LocalStack volume in the state/ directory.
+2025-03-18T01:40:36.119  WARN --- [-functhread3] hypercorn.error            : ASGI Framework Lifespan error, continuing without Lifespan support
+2025-03-18T01:40:36.119  WARN --- [-functhread3] hypercorn.error            : ASGI Framework Lifespan error, continuing without Lifespan support
+2025-03-18T01:40:36.138  INFO --- [-functhread3] hypercorn.error            : Running on https://0.0.0.0:4566 (CTRL + C to quit)
+2025-03-18T01:40:36.138  INFO --- [-functhread3] hypercorn.error            : Running on https://0.0.0.0:4566 (CTRL + C to quit)
+2025-03-18T01:40:36.188  INFO --- [  MainThread] localstack.utils.bootstrap : Execution of "start_runtime_components" took 2182.29ms
+2025-03-18T01:41:09.955  INFO --- [functhread12] l.services.motoserver      : starting moto server on http://0.0.0.0:35571
+2025-03-18T01:41:09.957  INFO --- [   asgi_gw_0] localstack.services.infra  : Starting mock S3 service on http port 4566 ...
+2025-03-18T01:41:10.486  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.GetObject => 404 (NoSuchBucket)
+2025-03-18T01:41:20.994  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.ListObjectsV2 => 404 (NoSuchBucket)
+2025-03-18T01:44:49.522  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.GetObject => 404 (NoSuchBucket)
+2025-03-18T01:45:10.884  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.GetObject => 404 (NoSuchBucket)
+2025-03-18T01:45:57.430  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.ListObjectsV2 => 404 (NoSuchBucket)
+2025-03-18T01:46:16.285  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.CreateBucket => 200
+2025-03-18T01:46:31.204  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.ListObjectsV2 => 200
+2025-03-18T01:47:00.397  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.GetObject => 404 (NoSuchKey)
+2025-03-18T02:17:49.069  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.HeadBucket => 200
+2025-03-18T02:17:49.102  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.PutObject => 200
+2025-03-18T02:17:49.130  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.GetObject => 200
+2025-03-18T02:17:53.967  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.GetObject => 404 (NoSuchKey)
+2025-03-18T02:18:53.716  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.HeadBucket => 200
+2025-03-18T02:18:53.747  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.PutObject => 200
+2025-03-18T02:18:53.779  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.GetObject => 200
+2025-03-18T02:19:09.549  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.ListObjectsV2 => 200
+2025-03-18T02:21:30.118  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.HeadBucket => 200
+2025-03-18T02:21:30.143  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.PutObject => 200
+2025-03-18T02:21:30.168  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.GetObject => 200
+2025-03-18T02:21:32.594  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.GetObject => 304 (304)
+2025-03-18T02:24:18.119  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.ListObjectsV2 => 200
+2025-03-18T02:24:28.368  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.GetObject => 304 (304)

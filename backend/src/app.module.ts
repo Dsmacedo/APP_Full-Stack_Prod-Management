@@ -12,9 +12,12 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
     ConfigModule.forRoot({
       isGlobal: true,
     }),
-    MongooseModule.forRoot('MONGODB_URI', {
-      dbName: 'eadcourse',
-    }),
+    MongooseModule.forRoot(
+      'mongodb+srv://Dan:970516@cluster0.b8qrk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',
+      {
+        dbName: 'eadcourse',
+      },
+    ),
     ProductsModule,
     CategoriesModule,
     OrdersModule,

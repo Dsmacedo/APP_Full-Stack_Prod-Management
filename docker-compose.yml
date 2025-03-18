@@ -1,40 +1,66 @@
-version: "3"
-
 services:
-  # MongoDB
   mongodb:
     image: mongo:latest
     container_name: mongodb
     ports:
       - "27017:27017"
-    volumes:
-      - mongodb_data:/data/db
     environment:
       - MONGO_INITDB_ROOT_USERNAME=admin
       - MONGO_INITDB_ROOT_PASSWORD=password
-    networks:
-      - app-network
 
-  # LocalStack para simular AWS S3
   localstack:
-    image: localstack/localstack:latest
-    container_name: localstack
+    image: localstack/localstack:1.4
+    container_name: localstack-s3
     ports:
       - "4566:4566"
-      - "4571:4571"
     environment:
       - SERVICES=s3
-      - DEBUG=1
+      - PERSIST=1
       - DATA_DIR=/tmp/localstack/data
+      - DOCKER_HOST=unix:///var/run/docker.sock
+      - DISABLE_CORS_CHECKS=1
+      - LAMBDA_EXECUTOR=local
+      - SKIP_SSL_CERT_DOWNLOAD=1
+      - DEFAULT_REGION=us-east-1
     volumes:
-      - localstack_data:/tmp/localstack
-    networks:
-      - app-network
+      - ./volume:/var/lib/localstack
+# version: "3"
 
-volumes:
-  mongodb_data:
-  localstack_data:
+# services:
+#   # MongoDB
+#   mongodb:
+#     image: mongo:latest
+#     container_name: mongodb
+#     ports:
+#       - "27017:27017"
+#     volumes:
+#       - mongodb_data:/data/db
+#     environment:
+#       - MONGO_INITDB_ROOT_USERNAME=admin
+#       - MONGO_INITDB_ROOT_PASSWORD=password
+#     networks:
+#       - app-network
 
-networks:
-  app-network:
-    driver: bridge
+#   # LocalStack para simular AWS S3
+#   localstack:
+#     image: localstack/localstack:latest
+#     container_name: localstack
+#     ports:
+#       - "4566:4566"
+#       - "4571:4571"
+#     environment:
+#       - SERVICES=s3
+#       - DEBUG=1
+#       - DATA_DIR=/tmp/localstack/data
+#     volumes:
+#       - localstack_data:/tmp/localstack
+#     networks:
+#       - app-network
+
+# volumes:
+#   mongodb_data:
+#   localstack_data:
+
+# networks:
+#   app-network:
+#     driver: bridge

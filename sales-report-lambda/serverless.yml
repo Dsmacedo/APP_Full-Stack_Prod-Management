@@ -8,7 +8,7 @@ provider:
   stage: ${opt:stage, 'dev'}
   region: ${opt:region, 'us-east-1'}
   environment:
-    MONGODB_URI: mongodb+srv://Dan:970516@cluster0.b8qrk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+    MONGODB_URI: ${env:MONGODB_URI}
     DB_NAME: eadcourse
     NODE_ENV: ${opt:stage, 'dev'}
 

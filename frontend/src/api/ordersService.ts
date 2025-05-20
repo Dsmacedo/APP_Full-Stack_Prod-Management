@@ -1,4 +1,3 @@
-// src/api/ordersService.ts
 import api from "./api";
 import { Order } from "../types/Order";
 

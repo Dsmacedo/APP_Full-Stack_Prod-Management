@@ -1,4 +1,3 @@
-// src/layouts/MainLayout.tsx
 import React, { useState } from "react";
 import {
   AppBar,

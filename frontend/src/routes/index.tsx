@@ -1,9 +1,7 @@
-// src/routes/index.tsx
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import MainLayout from "../layout/MainLayout";
 
-// Pages
 import Dashboard from "../Pages/Dashboard/Dashboard";
 import ProductList from "../Pages/Products/ProductList";
 import ProductForm from "../Pages/Products/ProductForm";

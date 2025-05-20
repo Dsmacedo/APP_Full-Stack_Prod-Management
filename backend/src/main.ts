@@ -7,13 +7,12 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const configService = app.get(ConfigService);
 
-  // Habilitar CORS
+  // CORS
   app.enableCors();
 
-  // Configurar prefixo global da API
   app.setGlobalPrefix('api');
 
-  // Configurar validação global
+  // validação global
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true,

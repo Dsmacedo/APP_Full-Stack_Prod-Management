@@ -1,4 +1,3 @@
-// src/components/ImageUpload.tsx
 import React, { useState } from "react";
 import {
   Box,

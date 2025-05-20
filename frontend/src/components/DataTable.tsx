@@ -1,4 +1,3 @@
-// src/components/DataTable.tsx
 import React from "react";
 import {
   Table,

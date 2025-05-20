@@ -1,4 +1,3 @@
-// src/pages/Products/ProductList.tsx
 import React, { useEffect, useState } from "react";
 import { Box, Button, Typography, CircularProgress, Chip } from "@mui/material";
 import { Add as AddIcon } from "@mui/icons-material";

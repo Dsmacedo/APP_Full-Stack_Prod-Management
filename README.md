@@ -1,3 +1,5 @@
+Observação a inclusao de imagens é apenas via AWS S3 ou LocalStack local
+LINK do PROJETO: https://full-stack-prod-management.vercel.app/products
 Este projeto é uma aplicação full stack que integra NestJS, MongoDB, ReactJS e AWS (com LocalStack para S3), usando TypeScript e Serverless Framework para funções Lambda.
 Estrutura do Projeto
 Copyprojeto/
